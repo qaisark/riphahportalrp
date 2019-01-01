@@ -1,0 +1,55 @@
+#searchfld{
+    width: 600px !important;
+}
+#lft{
+    position: fixed !important;
+}
+
+/*----------------------------------------
+     CONTACT US PAGE
+----------------------------------------*/
+div#carea {
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+div#fields input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+    width: 100% !important;
+    margin: 5px 0px;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    padding: 0px 10px;
+}
+div#fields textarea{
+    width: 100% !important;
+    margin: 5px 0px;
+    height: 150px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    padding: 0px 10px;
+}
+div#fields select{    height: 50px;
+    border-radius: 5px;
+    padding: 10px;
+    outline: none;
+    width: 100% !important;}
+
+div#fields button {
+    width:120px !important;
+    margin: 0 auto;
+    height: 50px;
+    border-radius: 5px;
+    border-style: none;
+    padding: 0px 10px;
+    background: #00a6d0;
+    color:white;
+}

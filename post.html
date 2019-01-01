@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+    <title>Portal By Team Go Progs</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <!-- You can change the theme colors from here -->
+    <link href="css/colors/blue.css" id="theme" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+    
+	<link rel="stylesheet" href="ckeditor/sample/css/samples.css">
+	<link rel="stylesheet" href="ckeditor/sample/toolbarconfigurator/lib/codemirror/neo.css">
+    <link rel="stylesheet" href="css/choices.css">
+    <script src="js/choices.js"></script>
+
+          <style>
+            body {
+              font-family: "Roboto", sans-serif;
+            }
+      
+            .select-wrapper {
+              margin: auto;
+              max-width: 600px;
+              width: calc(100% - 40px);
+            }
+      
+            .select-pure__select {
+              align-items: center;
+              background: #f9f9f8;
+              border-radius: 4px;
+              border: 1px solid rgba(0, 0, 0, 0.15);
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+              box-sizing: border-box;
+              color: #363b3e;
+              cursor: pointer;
+              display: flex;
+              font-size: 16px;
+              font-weight: 500;
+              justify-content: left;
+              min-height: 44px;
+              padding: 5px 10px;
+              position: relative;
+              transition: 0.2s;
+              width: 100%;
+            }
+      
+            .select-pure__options {
+              border-radius: 4px;
+              border: 1px solid rgba(0, 0, 0, 0.15);
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+              box-sizing: border-box;
+              color: #363b3e;
+              display: none;
+              left: 0;
+              max-height: 221px;
+              overflow-y: scroll;
+              position: absolute;
+              top: 50px;
+              width: 100%;
+              z-index: 5;
+            }
+      
+            .select-pure__select--opened .select-pure__options {
+              display: block;
+            }
+      
+            .select-pure__option {
+              background: #fff;
+              border-bottom: 1px solid #e4e4e4;
+              box-sizing: border-box;
+              height: 44px;
+              line-height: 25px;
+              padding: 10px;
+            }
+      
+            .select-pure__option--selected {
+              color: #e4e4e4;
+              cursor: initial;
+              pointer-events: none;
+            }
+      
+            .select-pure__option--hidden {
+              display: none;
+            }
+      
+            .select-pure__selected-label {
+              background: #5e6264;
+              border-radius: 4px;
+              color: #fff;
+              cursor: initial;
+              display: inline-block;
+              margin: 5px 10px 5px 0;
+              padding: 3px 7px;
+            }
+      
+            .select-pure__selected-label:last-of-type {
+              margin-right: 0;
+            }
+      
+            .select-pure__selected-label i {
+              cursor: pointer;
+              display: inline-block;
+              margin-left: 7px;
+            }
+      
+            .select-pure__selected-label i:hover {
+              color: #e4e4e4;
+            }
+      
+            .select-pure__autocomplete {
+              background: #f9f9f8;
+              border-bottom: 1px solid #e4e4e4;
+              border-left: none;
+              border-right: none;
+              border-top: none;
+              box-sizing: border-box;
+              font-size: 16px;
+              outline: none;
+              padding: 10px;
+              width: 100%;
+            }
+          </style>
+          
+</head>
+
+<body class="fix-header card-no-border">
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-toggleable-sm navbar-light">
+                <!-- ============================================================== -->
+                <!-- Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                        <!-- Logo icon -->
+                        <b>
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <img src="assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                            
+                        </b>
+                        <!--End Logo icon -->
+                        <!-- Logo text -->
+                        <span class="dark-logo">
+                         <!-- dark Logo text -->
+                        Portal
+                         <!--<img src="assets/images/logo-text.png" alt="homepage" class="dark-logo" />-->
+                         </span> </a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav mr-auto mt-md-0 ">
+                        <!-- This is  -->
+                        <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+                        <li class="nav-item hidden-sm-down">
+                            <form class="app-search p-l-20">
+                                <input type="text" class="form-control" id="searchfld" placeholder="Search questions..."> <a class="srh-btn"><i class="ti-search"></i></a>
+                            </form>
+                        </li>
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- User profile and search -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav my-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/users/1.png" alt="user" class="profile-pic m-r-5" />Qaisar Ansar</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar" id="lft">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar" style="padding-top:0px;">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li>
+                            <a href="index.html" class="waves-effect"><i class="fa fa-clock-o m-r-10" aria-hidden="true"></i>Dashboard</a>
+                        </li>
+                        
+                        <li>
+                            <a href="post.html" class="waves-effect"><i class="fa fa-table m-r-10" aria-hidden="true"></i>Post Question</a>
+                        </li>
+                        <li>
+                            <a href="index.html" class="waves-effect"><i class="fa fa-font m-r-10" aria-hidden="true"></i>Statistics</a>
+                        </li>
+                        <li>
+                            <a href="index.html" class="waves-effect"><i class="fa fa-globe m-r-10" aria-hidden="true"></i>Contributers</a>
+                        </li>
+                        <li>
+                            <a href="index.html" class="waves-effect"><i class="fa fa-columns m-r-10" aria-hidden="true"></i>About Us</a>
+                        </li>
+                        <li>
+                            <a href="index.html" class="waves-effect"><i class="fa fa-user m-r-10" aria-hidden="true"></i>Profile</a>
+                        </li>
+                        <li>
+                            <a href="contact.html" class="waves-effect"><i class="fa fa-info-circle m-r-10" aria-hidden="true"></i>Contact</a>
+                        </li>
+                    </ul>
+                    <div class="text-center m-t-30">
+                        <a href="" class="btn btn-danger">Some Text</a>
+                    </div>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <div class="row page-titles">
+                    <div class="col-md-6 col-8 align-self-center">
+                       <!--<h3 class="text-themecolor m-b-0 m-t-0">Dashboard</h3>--> 
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                            <li class="breadcrumb-item active">Contact Us</li>
+                        </ol>
+                    </div>
+                    <div class="col-md-6 col-4 align-self-center">
+                        <a href="" class="btn pull-right hidden-sm-down btn-success">Some Text</a>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-block">
+                                <div id="carea">
+                                    <h1>Post a Question!</h1>
+                                    <p>Write a title to question and description</p>
+                                    <div id="fields">
+                                        <div class="sep"></div>
+                                        <form action="#" method="post">
+                                            <span class="autocomplete-select"></span>
+                                             <div id="name_input">
+                                                <input name="name" placeholder="Question Title" required="required" type="text" pattern="[A-Za-z\s]+{30}">
+                                            </div>
+                                            
+                                           	<div id="editor">
+                                                <p>Write description of your question here...</p>
+                                            </div>
+                                            <br>
+                                            <div id="cbtn">
+                                                <button type="submit" name="contact_action">Post</button>
+                                            </div>
+                                        </form>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer text-center">
+                Copyript © 2019 Team Go Progs Inc.
+            </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="assets/plugins/jquery/jquery.min.js"></script>
+    <script src="js/custom.min.js"></script>    
+
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="assets/plugins/bootstrap/js/tether.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="js/jquery.slimscroll.js"></script>
+    <!--Wave Effects -->
+    <script src="js/waves.js"></script>
+    <script src="ckeditor/ckeditor.js"></script>
+    <script src="ckeditor/sample/js/sample.js"></script>
+    <!--Menu sidebar -->
+    <script src="js/sidebarmenu.js"></script>
+    <!--stickey kit -->
+    <script src="assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <!--Custom JavaScript -->
+    <!-- ============================================================== -->
+    <!-- Style switcher -->
+    <!-- ============================================================== -->
+    <script src="assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
+    <script src="js/bundle.min.js"></script>
+    <script>
+        $().ready(function(){
+            CKEDITOR.replace( 'editor' );
+        });
+    </script>       
+    <script>
+            var autocomplete = new SelectPure(".autocomplete-select", {
+              options: [
+                {
+                  label: "C++",
+                  value: "cpp",
+                },
+                {
+                  label: "Java",
+                  value: "java",
+                },
+                {
+                  label: "Phython",
+                  value: "py",
+                },
+              ],
+              value: ["cpp"],
+              multiple: true,
+              autocomplete: true,
+              icon: "fa fa-times",
+              onChange: value => { console.log(value); },
+            });
+          </script> 
+</body>
+</html>
